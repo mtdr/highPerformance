@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Outcome(id = "false", expect = Expect.FORBIDDEN, desc = "Iterator is incorrect")
 @State
 public class LFIteratorTest {
-    private Set<Integer> set = new LockFreeSet<>();
+    private Set<Integer> set = new SetImpl<>();
     private ArrayList<TreeSet<Integer>> producerResults = new ArrayList<>();
     private ArrayList<TreeSet<Integer>> consumerResults = new ArrayList<>();
     private AtomicInteger producerIter = new AtomicInteger(0);

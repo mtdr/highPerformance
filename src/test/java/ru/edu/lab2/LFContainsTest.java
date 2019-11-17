@@ -15,7 +15,7 @@ import org.openjdk.jcstress.infra.results.LLL_Result;
 @Outcome(id = "false, true, false", expect = Expect.FORBIDDEN, desc = "Contains operation is incorrect")
 @State
 public class LFContainsTest {
-    private Set<Integer> set = new LockFreeSet<>();
+    private Set<Integer> set = new SetImpl<>();
 
     @Actor
     public void actor_1() {

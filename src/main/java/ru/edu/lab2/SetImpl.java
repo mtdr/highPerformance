@@ -8,11 +8,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
-public class LockFreeSet<T extends Comparable<T>> implements Set<T> {
+public class SetImpl<T extends Comparable<T>> implements Set<T> {
 
     private Node head;
 
-    public LockFreeSet() {
+    public SetImpl() {
         head = new Node(null, null);
     }
 

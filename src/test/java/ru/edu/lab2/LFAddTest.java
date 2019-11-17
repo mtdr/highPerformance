@@ -19,7 +19,7 @@ public class LFAddTest {
     private final int[] RANGE_END = {1000, 1500, 2000};
     private final int TOTAL_NUMBERS = 2000;
 
-    private Set<Integer> set = new LockFreeSet<>();
+    private Set<Integer> set = new SetImpl<>();
     private AtomicInteger countAdded = new AtomicInteger(0);
 
     private void add(int i) {

@@ -14,7 +14,7 @@ import java.util.List;
 @Param(name = "value", gen = IntGen.class, conf = "1:3")
 @StressCTest
 public class LinCheckTest {
-    private Set<Integer> set = new LockFreeSet<>();
+    private Set<Integer> set = new SetImpl<>();
 
     @Operation
     public boolean add(@Param(name = "value") int value) {

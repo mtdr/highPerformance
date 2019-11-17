@@ -7,10 +7,10 @@ import java.util.Iterator;
 
 import static org.junit.Assert.*;
 
-public class LockFreeSetTest {
+public class SetImplTest {
     @Test
     public void testContainsAfterAdd() {
-        Set<Integer> set = new LockFreeSet<>();
+        Set<Integer> set = new SetImpl<>();
         for (int i = 0; i < 10; ++i)
             assertTrue(set.add(i));
         for (int i = 0; i < 10; ++i)
@@ -19,7 +19,7 @@ public class LockFreeSetTest {
 
     @Test
     public void testAdd() {
-        Set<Integer> set = new LockFreeSet<>();
+        Set<Integer> set = new SetImpl<>();
         for (int i = 0; i < 10; ++i)
             assertTrue(set.add(i));
         for (int i = 0; i < 10; ++i)
@@ -28,7 +28,7 @@ public class LockFreeSetTest {
 
     @Test
     public void testRemove() {
-        Set<Integer> set = new LockFreeSet<>();
+        Set<Integer> set = new SetImpl<>();
         for (int i = 0; i < 10; ++i)
             assertFalse(set.remove(i));
         for (int i = 0; i < 10; ++i)
@@ -41,7 +41,7 @@ public class LockFreeSetTest {
 
     @Test
     public void testContainsAfterRemoval() {
-        Set<Integer> set = new LockFreeSet<>();
+        Set<Integer> set = new SetImpl<>();
         for (int i = 0; i < 10; ++i)
             set.add(i);
         for (int i = 0; i < 5; ++i)
@@ -57,7 +57,7 @@ public class LockFreeSetTest {
 
     @Test
     public void testEmpty() {
-        Set<Integer> set = new LockFreeSet<>();
+        Set<Integer> set = new SetImpl<>();
         assertTrue(set.isEmpty());
         for (int i = 0; i < 10; ++i)
             set.add(i);
@@ -77,7 +77,7 @@ public class LockFreeSetTest {
         for (int i = 0; i < 10; ++i)
             input.add(i);
 
-        Set<Integer> set = new LockFreeSet<>();
+        Set<Integer> set = new SetImpl<>();
         input.forEach(set::add);
 
         for (Iterator<Integer> iter = set.iterator(); iter.hasNext(); ) {
